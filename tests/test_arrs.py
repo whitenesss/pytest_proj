@@ -1,5 +1,6 @@
 from utils import arrs
-from utils import dicts
+from utils.dicts import get_val
+
 
 def test_get():
     assert arrs.get([1, 2, 3], 2, "test") == 3
@@ -14,4 +15,7 @@ def test_slice():
 
 
 def test_get_val():
-    pass
+    assert arrs.get_val({"vcs": "mercurial"}, "vcs") == "mercurial"
+    assert arrs.get_val({"git": "mercurial"}) == "mercurial"
+    assert arrs.get_val({}, "vcs") == 'git'
+    assert arrs.get_val({}, "vcs", "bazaar") == 'bazaar'
