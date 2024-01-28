@@ -11,3 +11,7 @@ def test_slice():
     assert arrs.my_slice([1, 2, 3], 1) == [2, 3]
     assert arrs.my_slice([]) == []
     assert arrs.my_slice([1, 2]) == [1, 2]
+
+
+def test_get_val():
+    assert arrs.get_val({"vcs": "mercurial"}) == "mercurial"
