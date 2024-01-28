@@ -41,3 +41,14 @@ def my_slice(coll, start=None, end=None):
         normalized_end = end
 
     return coll[normalized_start:normalized_end]
+
+
+
+def get_val(collection, key=None, default="git"):
+    if key == None:
+        return collection[default]
+    elif len(collection) == 0:
+        return default
+    return collection[key]
+
+
